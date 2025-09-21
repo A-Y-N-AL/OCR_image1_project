@@ -1,0 +1,60 @@
+{% comment %} <!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>النص المستخرج</title>
+</head>
+<body>
+    <h1>النص المستخرج من الصورة</h1>
+    <p>{{ text }}</p>
+    <a href="{{ file_url }}" target="_blank">رؤية الصورة الأصلية</a>
+    <br>
+    <a href="/">عودة للصفحة الرئيسية</a>
+</body>
+</html> {% endcomment %}
+{% comment %} 
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>النص المستخرج</title>
+</head>
+<body>
+    <h1>النص المستخرج من الصورة:</h1>
+    <p>{{ text }}</p>
+
+    {% if file_url %}
+        <h3>الصورة الأصلية:</h3>
+        <img src="{{ file_url }}" alt="الصورة المرفوعة" style="max-width:400px;">
+    {% endif %}
+
+    <br><br>
+    <a href="/">رجوع</a>
+</body>
+</html> {% endcomment %}
+ 
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>النص المستخرج</title>
+</head>
+<body>
+    <h1>النص المستخرج من الصورة:</h1>
+
+    {% if error_message %}
+        <p style="color:red; font-weight:bold;">{{ error_message }}</p>
+    {% else %}
+        <p>{{ text }}</p>
+    {% endif %}
+
+    {% if file_url %}
+        <h3>الصورة الأصلية:</h3>
+        <img src="{{ file_url }}" alt="الصورة المرفوعة" style="max-width:400px;">
+    {% endif %}
+
+    <br><br>
+    <a href="{% url 'index' %}">رجوع</a>
+
+</body>
+</html>
